@@ -7,8 +7,8 @@ services:
       context: elasticsearch/
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - /data/log/elk:/var/lib/elasticsearch
-      - /data/log/elk:/var/log/elasticsearch
+      - /data/elk:/var/lib/elasticsearch
+      - /data/logs/elk:/var/log/elasticsearch
     ports:
       - "9200:9200"
       - "9300:9300"
