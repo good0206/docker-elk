@@ -1,0 +1,16 @@
+filebeat.config:
+  prospectors:
+    path: /usr/share/filebeat/prospectors.d/*.yml
+    reload.enabled: true
+  modules:
+    path: /usr/share/filebeat/modules.d/*.yml
+    reload.enabled: true
+
+filebeat.modules:
+- module: nginx
+
+processors:
+- add_cloud_metadata:
+
+output.elasticsearch:
+  hosts: ["http://127.0.0.1:9200"]
