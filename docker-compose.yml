@@ -48,9 +48,9 @@ services:
       - elasticsearch
 
 volumes:
-  esdata1:
+  esdata:
     driver: local
-  esdata2:
+  eslog:
     driver: local
 
 networks:
