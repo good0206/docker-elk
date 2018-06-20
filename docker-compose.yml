@@ -5,10 +5,11 @@ services:
   elasticsearch:
     build:
       context: elasticsearch/
+    container_name: elasticsearch
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
-      - /data/elk:/var/lib/elasticsearch
-      - /data/logs/elk:/var/log/elasticsearch
+      - esdata:/var/lib/elasticsearch
+      - eslog:/var/log/elasticsearch
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -20,6 +21,7 @@ services:
   logstash:
     build:
       context: logstash/
+    container_name: logstash
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
@@ -35,6 +37,7 @@ services:
   kibana:
     build:
       context: kibana/
+    container_name: kibana
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
     ports:
@@ -43,6 +46,12 @@ services:
       - elk
     depends_on:
       - elasticsearch
+
+volumes:
+  esdata1:
+    driver: local
+  esdata2:
+    driver: local
 
 networks:
 
