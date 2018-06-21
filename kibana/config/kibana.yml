@@ -5,3 +5,6 @@
 server.name: kibana
 server.host: "0"
 elasticsearch.url: http://elasticsearch:9200
+xpack.security.enabled: true
+xpack.security.cookieName: sid
+xpack.security.encryptionKey: 6704b717a3d3474896781e4356084e8e
