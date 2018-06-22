@@ -5,7 +5,7 @@
 server.name: kibana
 server.host: "0"
 elasticsearch.url: http://elasticsearch:9200
-elasticsearch.password: 123456
+#elasticsearch.password: 123456
 #server.ssl.enabled: true
 #server.ssl.key: /usr/share/kibana/cert.key
 #server.ssl.certificate: /usr/share/kibana/cert.pem
