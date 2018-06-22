@@ -6,12 +6,12 @@ server.name: kibana
 server.host: "0"
 elasticsearch.url: http://elasticsearch:9200
 #kibana用户名
-elasticsearch.username: "kibana"
+elasticsearch.username: "elastic"
 #kibana密码
 elasticsearch.password: "123456"
-#server.ssl.enabled: true
-#server.ssl.key: /usr/share/kibana/cert.key
-#server.ssl.certificate: /usr/share/kibana/cert.pem
+server.ssl.enabled: true
+server.ssl.key: /usr/share/kibana/cert.key
+server.ssl.certificate: /usr/share/kibana/cert.pem
 xpack.security.enabled: true
 xpack.security.cookieName: sid
 xpack.security.encryptionKey: 6704b717a3d3474896781e4356084e8e
